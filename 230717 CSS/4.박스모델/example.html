@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>예제</title>
+
+    <style>
+      div {
+        background-color: cornflowerblue;
+        border: 6px solid black;
+        width: 50px;
+        height: 50px;
+        margin-bottom: 15px;
+      }
+
+      span {
+        display: inline;
+        background-color: orangered;
+        border: 6px solid black;
+        font-size: 30px;
+        padding: 10px;
+        /* width: 100px;
+        height: 100px; 
+        인라인은 가로세로 지정이 안되고, 내용물의 크기 만큼 차지한다*/
+      }
+    </style>
+  </head>
+  <body>
+    <h1>블럭 vs 인라인</h1>
+
+    <h2>블럭</h2>
+    <!-- div태그가 기본적으로 블록태그임. -->
+    <div></div>
+    <div></div>
+    <div></div>
+    <ul>
+      <li>한 줄에 하나씩 쌓임</li>
+      <li>가로와 세로 길이를 가짐</li>
+      <li>화면 배치를 위해 사용</li>
+    </ul>
+
+    <h2>인라인</h2>
+    <span>A</span>
+    <span>BB</span>
+    <span>CCC</span>
+    <ul>
+      <li>한 줄에 여러 요소가 나옴</li>
+      <li>가로 세로 길이 직접 X. 내용물의 크기 만큼을 가짐</li>
+      <li>텍스트를 꾸밀 때, 사용</li>
+    </ul>
+  </body>
+</html>
