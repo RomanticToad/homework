@@ -3,61 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Float 레이아웃</title>
-    <style>
-      /* 좌우 여백줄때 컨테이너 자주쓴다 */
-      .container {
-        /* 본문의 가로 크기를 제한했다.*/
-        max-width: 940px;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      /* 메인과 어사이드를 합해서 컨텐츠 에어리어라고함 */
-      .content-area {
-        /* 시작부분과 끝부분에 줄 하나씩 긋도록 생성 */
-        border-top: 3px solid black;
-        border-bottom: 3px solid black;
-      }
-      .main-area {
-        width: 66%;
-        float: left;
-      }
-      /* 사이드바 크기 조정하고 오른쪽으로 보내고나니 아래줄이 짤리고 푸터가 같이붙어버렸다. */
-      .sidebar {
-        width: 34%;
-        float: right;
-      }
-      /* 네비게이션 */
-      .site-nav {
-        margin-top: 20px;
-      }
-      /* 리스트 고유의 마진패딩을 없애서 쉽게 스타일할 수 있게함 */
-      .site-nav ul {
-        margin: 0;
-        padding: 0;
-      }
-      .site-nav li {
-        list-style: none;
-        float: left;
-        margin-right: 5px;
-      }
-      /* a태그 공부하자 */
-      .site-nav a {
-        display: block;
-        color: #617140;
-        text-decoration: none;
-        padding: 10px 20px;
-        border: 3px solid #e5e9dc;
-        border-bottom: none;
-      }
-
-      .site-nav a:hover {
-        background-color: #e5e9dc;
-      }
-
-      /* 네비게이션 끝 */
-    </style>
+    <title>포지션</title>
     <link rel="stylesheet" href="3_style.css" />
+    <style>
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+      /* 오버레이 */
+      .image-banner {
+        /* 이미지 기준을 잡아준다 */
+        /* 기준 : 상대좌표(원래위치에서 이동) */
+        position: relative;
+        /* 이미지배너를 왼쪽에서부터 100px 옮겨보자 */
+        left: 100px;
+        /* 아래에서부터 100px 올리려면? */
+        /* bottom: 100px; */
+        /* z-index 값을 0으로 내리면 사이드바가 사진 위로 올라감 */
+        z-index: 1;
+      }
+
+      .image-banner img {
+        /* 이미지태그는 원래 인라인인데 block으로 수정함 */
+        /* 왜냐하면 */
+        display: block;
+      }
+      /* 이미지와 겹치게 할 글자상자 */
+      .banner-description {
+        /* 절대좌표 포지션으로 바꾸어 기준에 맞춤 */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        color: #fff;
+        background-color: rgba(0, 0, 0, 0.65);
+        padding: 15px 25px;
+        /* 글자를 중앙으로 오게함 */
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
@@ -79,12 +67,20 @@
       <!-- 그래서 클리어보스 해줌 -->
       <div style="clear: both" class="content-area">
         <main class="main-area">
+          <h2>Main Column Heading</h2>
           <p>
             This is main. Lorem ipsum dolor sit amet, consectetur adipisicing
             elit. Excepturi deleniti quod numquam? Quam, facilis impedit? Quam
             possimus numquam commodi culpa, corporis blanditiis eaque harum
             quaerat ratione animi magnam! Quas, a.
           </p>
+          <div class="image-banner">
+            <!-- 이미지배너는 메인에어리어 안에 있기때문에 100%로 설정하면 크기가 고정된다. -->
+            <img src="coding.jpg" alt="흑우" />
+            <div class="banner-description">
+              <p>음머ㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓㅓ</p>
+            </div>
+          </div>
           <p>
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ducimus
             quo quam expedita vero adipisci similique deleniti fugit maiores
