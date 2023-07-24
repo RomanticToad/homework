@@ -1,0 +1,57 @@
+html {
+  background-color: rgb(33, 33, 33);
+}
+
+h1 {
+  background-color: rgb(33, 33, 33);
+  font-size: 50px;
+  color: white;
+  margin: 0;
+  padding: 20px;
+}
+body {
+  background-color: white;
+}
+.main-area {
+  float: right;
+  width: 66%;
+}
+/* 네비게이션 메뉴 */
+.site-nav {
+  box-sizing: border-box;
+  width: 34%;
+}
+/* 리스트 고유의 마진 패딩을 없애서 쉽게 스타일 할 수 있도록 */
+.site-nav ul {
+  margin: 0px;
+  padding: 0%;
+}
+.site-nav li {
+  list-style: none;
+  display: flex;
+  background-color: white;
+  border-right: 5px solid rgb(213, 212, 212);
+  /* 내비크기 */
+  width: 180px;
+  height: 80px;
+  padding: 0%;
+  margin: 0%;
+  display: block;
+}
+.site-nav a {
+  font-weight: 900;
+  display: flex;
+  color: black;
+  font-size: 30px;
+  text-decoration: none;
+  /* border: 1px solid black; */
+  float: right;
+  margin-right: 20px;
+}
+
+.site-nav a:hover {
+  background-color: red;
+}
+.fix {
+  clear: both;
+}
